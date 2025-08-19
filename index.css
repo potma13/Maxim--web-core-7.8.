@@ -1,0 +1,94 @@
+body {
+    font-family: TT Lakes;
+    color: #1B1C21;
+}
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 24px;
+    width: 272px; /* если смотреть через DevTools гугла, то блок будет 320px шириной  */
+    max-height: 660px;
+    overflow-y: auto;
+}
+.side-menu::-webkit-scrollbar {
+    display: none;
+}
+.header-icon-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+.left-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.header__icon:last-child {
+    margin-left: auto;
+}
+.menu {
+    margin-top: 50px;
+    line-height: 45px;
+}
+.menu__text {
+    position: relative;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+.menu__text:hover::before { /* не понял как делать закругление у декора */
+    position: absolute;
+    content: "";
+    left: -24px;
+    top: 6px;
+    width: 4px;
+    height: 30px;
+    background: #41F6D7;
+    border-radius: 5px;
+}
+.menu__text span { /* сделал через span чтобы декор не анимировался */
+    display: inline-block;
+}
+.menu__text:hover span {
+    animation-name: text-animation;
+    animation-duration: 3s;
+}
+@keyframes text-animation {
+    0% {
+        filter: opacity(25%);
+    }
+    100% {
+        filter: opacity(100%);
+    }
+}
+.menu__footer {
+    margin-top: 200px;
+}
+.footer-icon-group {
+    display: flex;
+    cursor: pointer;
+    gap: 15px;
+}
+.footer-text-group {
+    margin-top: 10px;
+}
+.footer__text + div {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px
+}
+.footer__text:last-child {
+    display: flex;
+    margin-top: 25px;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ru:hover, .en:hover, .ch:hover {
+    color: #7E7E82;
+    cursor: pointer;
+    animation-name: text-animation;
+    animation-duration: 1s;
+}
