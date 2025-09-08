@@ -12,7 +12,7 @@ body {
     top: 0;
     left: 0;
     padding: 24px;
-    width: 320px; /* если смотреть через DevTools гугла, то блок будет 320px шириной  */
+    width: 320px;
     max-height: 100%;
     overflow-y: auto;
 }
